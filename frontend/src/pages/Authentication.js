@@ -23,13 +23,13 @@ export async function action({ request }) {
     body: JSON.stringify(userDetails),
   });
 
-  if (mode !== "login" || mode !== "signup") {
+  /* if (mode !== "login" || mode !== "signup") {
     throw json({ message: "Unsupported mode" }, { status: 422 });
   }
 
   if (!response.ok) {
     throw json({ message: "Failed to authenticate" }, { status: 500 });
-  }
+  } */
 
   if (response.status === 422 || response.status === 401) {
     return response;
